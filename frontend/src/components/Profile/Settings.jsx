@@ -18,7 +18,7 @@ const Settings = () => {
   };
   useEffect(()=>{
     const fetch=async()=>{
-      const response=await axios.get("http://localhost:1000/get-user-information",
+      const response=await axios.get("https://bookstore-2-bbh6.onrender.com/get-user-information",
         {headers}
       );
       setProfileData(response.data);
@@ -27,7 +27,7 @@ const Settings = () => {
     fetch();
   },[])
   const submitAddress=async()=>{
-    const response=await axios.put("http://localhost:1000/update-address",
+    const response=await axios.put("https://bookstore-2-bbh6.onrender.com/update-address",
       Value,{headers});
       alert(response.data.message)
   }
