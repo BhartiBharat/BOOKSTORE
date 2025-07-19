@@ -35,7 +35,7 @@ const headers = {
             }
 
             // API Request
-            const response = await axios.put("http://localhost:1000/update-book", Data, { headers });
+            const response = await axios.put("https://bookstore-2-bbh6.onrender.com/update-book", Data, { headers });
 
             // ✅ Check if response exists
             if (response && response.data) {
@@ -59,7 +59,7 @@ const headers = {
     };
     useEffect(() => {
         const fetch = async () => {
-          const response = await axios.get(`http://localhost:1000/get-book-by-id/${id}`);
+          const response = await axios.get(`https://bookstore-2-bbh6.onrender.com/get-book-by-id/${id}`);
     
           setData(response.data.data)
         };
