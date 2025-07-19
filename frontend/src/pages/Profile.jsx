@@ -35,7 +35,7 @@ useEffect(() => {
     console.log("Headers being sent:", headers);
 
     try {
-      const response = await axios.get("http://localhost:1000/get-user-information", { headers });
+      const response = await axios.get("https://bookstore-2-bbh6.onrender.com/get-user-information", { headers });
       console.log("Response received:", response.data);
 
       if (response.status === 200 && response.data) {
