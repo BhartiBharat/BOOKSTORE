@@ -23,7 +23,7 @@ const AllOrders = () => {
 
   useEffect(()=>{
     const fetch=async()=>{
-      const response=await axios.get("http://localhost:1000/get-all-orders",
+      const response=await axios.get("https://bookstore-2-bbh6.onrender.com/get-all-orders",
         {headers }
       );
       setAllOrders(response.data.data);
@@ -39,7 +39,7 @@ const AllOrders = () => {
   };
   const submitChanges=async(i)=>{
     const id=AllOrders[i]._id;
-    const response=await axios.put(`http://localhost:1000/update-status/${id}`,
+    const response=await axios.put(`https://bookstore-2-bbh6.onrender.com/update-status/${id}`,
       Values,{headers}
     );
     alert(response.data.message);
