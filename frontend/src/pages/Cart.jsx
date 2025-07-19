@@ -18,7 +18,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const res = await axios.get("http://localhost:1000/get-user-cart", { headers });
+        const res = await axios.get("https://bookstore-2-bbh6.onrender.com/get-user-cart", { headers });
         setCart(res.data.data || []); // ✅ Ensure `data` exists
       } catch (error) {
         console.error("Error fetching cart:", error);
@@ -29,7 +29,7 @@ const Cart = () => {
 
   // ✅ Function to delete an item from the cart
   const deleteItem = async (bookid) => {
-   const response=await axios.put(`http://localhost:1000/remove-from-cart/${bookid}`,{},
+   const response=await axios.put(`https://bookstore-2-bbh6.onrender.com/remove-from-cart/${bookid}`,{},
    {headers})
    alert(response.data.message)
   };
@@ -43,7 +43,7 @@ const Cart = () => {
   }, [Cart]);
   const PlaceOrder=async()=>{
     try {
-      const response=await axios.post(`http://localhost:1000/place-order`,
+      const response=await axios.post(`https://bookstore-2-bbh6.onrender.com/place-order`,
         {order:Cart},{headers}
       );
       alert(response.data.message);
