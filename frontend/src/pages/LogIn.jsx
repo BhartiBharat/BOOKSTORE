@@ -22,7 +22,7 @@ const LogIn = () => {
             if (Values.username === "" || Values.password === "") {
                 alert("All fields are required");
             } else {
-                const response = await axios.post("http://localhost:1000/sign-in", Values);
+                const response = await axios.post("https://bookstore-2-bbh6.onrender.com/sign-in", Values);
                 dispatch(authActions.login());
                 dispatch(authActions.changeRole(response.data.role));
                 localStorage.setItem("id", response.data.id);
