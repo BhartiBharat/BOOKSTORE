@@ -10,7 +10,7 @@ const Favourites = () => {
   };
   useEffect(()=>{
     const fetch=async ()=>{
-      const response =await axios.get("http://localhost:1000/get-favourite-books",
+      const response =await axios.get("https://bookstore-2-bbh6.onrender.com/get-favourite-books",
         {headers}
       );
      setFavouriteBooks(response.data.data)
