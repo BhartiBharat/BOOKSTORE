@@ -19,7 +19,7 @@ const SignUp = () => {
           alert("All fields are required")
         }
         else{
-         const response =await axios.post("http://localhost:1000/sign-up",
+         const response =await axios.post("https://bookstore-2-bbh6.onrender.com/sign-up",
         Values)
         alert(response.data.message);
         navigate("/LogIn")
