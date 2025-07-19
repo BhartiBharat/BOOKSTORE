@@ -19,7 +19,7 @@ const ViewBookDetails = () => {
   
   useEffect(() => {
     const fetch = async () => {
-      const response = await axios.get(`http://localhost:1000/get-book-by-id/${id}`);
+      const response = await axios.get(`https://bookstore-2-bbh6.onrender.com/get-book-by-id/${id}`);
 
       setData(response.data.data)
     };
@@ -30,7 +30,7 @@ const ViewBookDetails = () => {
     bookid:id,
   }
   const handelFavourite=async ()=>{
-    const response=await axios.put("http://localhost:1000/add-book-to-favourite",{},{ headers});
+    const response=await axios.put("https://bookstore-2-bbh6.onrender.com/add-book-to-favourite",{},{ headers});
     alert(response.data.message);
   };
   const handleCart = async () => {
@@ -43,7 +43,7 @@ const ViewBookDetails = () => {
     }
   
     try {
-      const response = await axios.put("http://localhost:1000/add-to-cart", {}, { headers });
+      const response = await axios.put("https://bookstore-2-bbh6.onrender.com/add-to-cart", {}, { headers });
       alert(response.data.message);
     } catch (error) {
       console.error("Error adding to cart:", error.response?.data || error.message);
@@ -52,7 +52,7 @@ const ViewBookDetails = () => {
   };
 
   const deleteBook=async ()=>{
-     const response=await axios.delete("http://localhost:1000/delete-book",  { headers });
+     const response=await axios.delete("https://bookstore-2-bbh6.onrender.com/delete-book",  { headers });
      alert(response.data.message);
      navigate("/all-books")
   }
